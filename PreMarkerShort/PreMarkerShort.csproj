@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82D8D2AE-4374-48F4-9766-9C12F847C883}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PreMarkerShort</RootNamespace>
+    <AssemblyName>PreMarkerShort</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\CollectionExtensions.cs" />
+    <Compile Include="Core\CommandManager.cs" />
+    <Compile Include="Core\ProductCart.cs" />
+    <Compile Include="Core\Market.cs" />
+    <Compile Include="Coupon\CouponCommands\CartCouponCommandFactory.cs" />
+    <Compile Include="Interfaces\Coupon\ICouponCommandFactory.cs" />
+    <Compile Include="Coupon\CouponCommands\ProductCouponCommandFactory.cs" />
+    <Compile Include="Coupon\CouponCommands\SetCouponToCartCommand.cs" />
+    <Compile Include="Coupon\CouponCommands\SetCouponToProductCommand.cs" />
+    <Compile Include="Coupon\DiscountCartCoupon.cs" />
+    <Compile Include="Coupon\DiscountProductCoupon.cs" />
+    <Compile Include="Interfaces\Cart\ICartCoupon.cs" />
+    <Compile Include="Interfaces\Coupon\ICoupon.cs" />
+    <Compile Include="Interfaces\Product\IProductCoupon.cs" />
+    <Compile Include="Interfaces\Cart\ICartCouponCommandFactory.cs" />
+    <Compile Include="Interfaces\Command\ICommand.cs" />
+    <Compile Include="Interfaces\Command\ICommandManager.cs" />
+    <Compile Include="Interfaces\Product\IProductRepository.cs" />
+    <Compile Include="Interfaces\Cart\IShoppingCartManager.cs" />
+    <Compile Include="Interfaces\IMarket.cs" />
+    <Compile Include="Interfaces\Product\IProduct.cs" />
+    <Compile Include="Interfaces\Product\IProductCommandFactory.cs" />
+    <Compile Include="Interfaces\Product\IProductPriceInfo.cs" />
+    <Compile Include="Interfaces\Product\IProductPriceInfoFactory.cs" />
+    <Compile Include="Sample.cs" />
+    <Compile Include="Print\ConsolePrinter.cs" />
+    <Compile Include="Interfaces\IPrinter.cs" />
+    <Compile Include="Interfaces\IReceiptGenerator.cs" />
+    <Compile Include="Print\SomeReceiptGenerator.cs" />
+    <Compile Include="Product\Candy.cs" />
+    <Compile Include="Product\Juice.cs" />
+    <Compile Include="Product\Marmelade.cs" />
+    <Compile Include="Product\ProductCommands\ProductAddCommand.cs" />
+    <Compile Include="Product\ProductCommands\ProductChangeCountCommand.cs" />
+    <Compile Include="Product\ProductCommands\ProductCommandFactory.cs" />
+    <Compile Include="Product\ProductCommands\ProductRemoveCommand.cs" />
+    <Compile Include="Product\ProductPriceInfo.cs" />
+    <Compile Include="Product\ProductPriceInfoFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
